@@ -6,7 +6,13 @@ public class Main {
         // to see how IntelliJ IDEA suggests fixing it.
         System.out.printf("Hello and welcome! ");
 
-        UsuarioService usuarioService = new UsuarioService();
+        Notificador notificador = new Notificador() {
+            @Override
+            public void enviarMensagem(String mensagem) {
+                System.out.println("Bem-vindo " + mensagem + "!");
+            }
+        };
+        UsuarioService usuarioService = new UsuarioService(notificador);
         usuarioService.registrar("Ricardo");
     }
 }

@@ -1,6 +1,10 @@
 public class UsuarioService {
     Notificador notificador;
 
+    public UsuarioService(Notificador notificador) {
+        this.notificador = notificador;
+    }
+
     void setNotificador(Notificador notificador) {
         this.notificador = notificador;
     }
